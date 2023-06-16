@@ -39,7 +39,7 @@ public class WebTexturesProvider
     }
 
     public IEnumerator TryLoadTextures(int count, 
-        Action<List<Texture>> onComplete, Action<float> progressChanged, int firstTextureOrderNumber = FirstTextureOrderNumber)
+        Action<List<Texture>> onComplete, Action<float> progressChanged = null, int firstTextureOrderNumber = FirstTextureOrderNumber)
     {
         List<Texture> result = new List<Texture>();
         float progress = 0;

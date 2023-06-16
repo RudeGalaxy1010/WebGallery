@@ -15,6 +15,14 @@ public class TexturesDisplayer
         UpdateTextures();
     }
 
+    public int TexturesDisplayed => _textureItems.Count;
+
+    public void AddTextures(List<Texture> textures)
+    {
+        _textures.AddRange(textures);
+        UpdateTextures();
+    }
+
     private void UpdateTextures()
     {
         for (int i = 0; i < _textures.Count; i++)
