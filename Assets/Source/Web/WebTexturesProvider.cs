@@ -26,7 +26,7 @@ public class WebTexturesProvider
 
         while (!_sendRequestOperation.isDone)
         {
-            progressChanged?.Invoke(_sendRequestOperation.progress);
+            progressChanged?.Invoke(_sendRequestOperation.progress / 0.9f);
             yield return null;
         }
 
@@ -52,8 +52,7 @@ public class WebTexturesProvider
 
             while (!_sendRequestOperation.isDone)
             {
-                Debug.Log(progress + _sendRequestOperation.progress / count);
-                progressChanged?.Invoke(progress);
+                progressChanged?.Invoke(progress + _sendRequestOperation.progress / 0.9f / count);
                 yield return null;
             }
 
@@ -67,7 +66,7 @@ public class WebTexturesProvider
                 result.Add(null);
             }
 
-            progress += _sendRequestOperation.progress / count;
+            progress += _sendRequestOperation.progress / 0.9f / count;
         }
 
         onComplete?.Invoke(result);

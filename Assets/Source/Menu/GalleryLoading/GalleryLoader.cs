@@ -7,11 +7,13 @@ public class GalleryLoader : IInitable, IDeinitable
     private const int ImagesToLoadOnStart = 10;
 
     private WebTexturesProvider _picturesProvider;
+    private ProgressBar _progressBar;
     private GalleryLoaderEmitter _emitter;
 
-    public GalleryLoader(WebTexturesProvider picturesProvider, GalleryLoaderEmitter emitter)
+    public GalleryLoader(WebTexturesProvider picturesProvider, ProgressBar progressBar, GalleryLoaderEmitter emitter)
     {
         _picturesProvider = picturesProvider;
+        _progressBar = progressBar;
         _emitter = emitter;
     }
 
@@ -27,13 +29,9 @@ public class GalleryLoader : IInitable, IDeinitable
 
     private void OnLoadGalleryButtonClicked()
     {
-        _emitter.StartCoroutine(_picturesProvider.TryLoadTextures(ImagesToLoadOnStart, 
-            (textures) => LoadGallery(textures), (progress) => _ = progress));
-
-        // TODO:
-        // 1) Load 10 images - DONE!
-        // 2) Add progress bar
-        // 3) Put images into 'GalleryData' and call SceneLoader.LoadGallery(GalleryData);
+        _progressBar.SetVisible(true);
+        _emitter.StartCoroutine(_picturesProvider.TryLoadTextures(ImagesToLoadOnStart, LoadGallery, 
+            _progressBar.UpdateProgress));
     }
 
     private void LoadGallery(List<Texture> startTextures)
