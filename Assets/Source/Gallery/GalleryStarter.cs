@@ -16,7 +16,8 @@ public class GalleryStarter : Starter, ISceneLoadHandler<GalleryData>
     protected override void OnStart()
     {
         WebTexturesProvider webTexturesProvider = new WebTexturesProvider(WebConstants.TexturesUrl);
-        TexturesDisplayer texturesDisplayer = new TexturesDisplayer(_galleryData.StartTextures, _textureDisplayerEmitter);
+        TexturesDisplayer texturesDisplayer = Register(new TexturesDisplayer(_galleryData.StartTextures, 
+            _textureDisplayerEmitter));
         TexturesSubloader texturesSubloader = Register(new TexturesSubloader(webTexturesProvider, texturesDisplayer, 
             _texturesSubloaderEmitter));
     }

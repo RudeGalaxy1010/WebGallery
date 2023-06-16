@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TexturesDisplayer
+public class TexturesDisplayer : IDeinitable
 {
     private List<Texture> _textures;
     private TextureDisplayerEmitter _emitter;
@@ -16,6 +16,14 @@ public class TexturesDisplayer
     }
 
     public int TexturesDisplayed => _textureItems.Count;
+
+    public void Deinit()
+    {
+        for (int i = 0; i < _textures.Count; i++)
+        {
+            Object.Destroy(_textures[i]);
+        }
+    }
 
     public void AddTextures(List<Texture> textures)
     {
