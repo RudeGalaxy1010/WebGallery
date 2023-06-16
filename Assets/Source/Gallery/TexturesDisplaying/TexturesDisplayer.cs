@@ -11,14 +11,11 @@ public class TexturesDisplayer : IDeinitable
     private TexturesDisplayerEmitter _emitter;
     private List<TextureItem> _textureItems;
 
-    private bool _textureSelected;
-
     public TexturesDisplayer(List<Texture> startTextures, TexturesDisplayerEmitter emitter)
     {
         _textures = startTextures;
         _emitter = emitter;
         _textureItems = new List<TextureItem>();
-        _textureSelected = false;
         UpdateTextures();
     }
 
@@ -30,16 +27,6 @@ public class TexturesDisplayer : IDeinitable
         for (int i = 0; i < _textureItems.Count; i++)
         {
             _textureItems[i].OnClick -= OnTextureItemClicked;
-        }
-
-        if (_textureSelected == true)
-        {
-            return;
-        }
-
-        for (int i = 0; i < _textures.Count; i++)
-        {
-            Object.Destroy(_textures[i]);
         }
     }
 
@@ -68,7 +55,6 @@ public class TexturesDisplayer : IDeinitable
 
     private void OnTextureItemClicked(Texture texture)
     {
-        _textureSelected = true;
         OnTextureSelect?.Invoke(texture);
     }
 }
