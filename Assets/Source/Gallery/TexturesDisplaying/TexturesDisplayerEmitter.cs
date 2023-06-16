@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TextureDisplayerEmitter : MonoBehaviour
+public class TexturesDisplayerEmitter : MonoBehaviour
 {
     public TextureItem TextureItemPrefab;
     public Transform TextureItemsContainer;

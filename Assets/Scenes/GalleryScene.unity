@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006913664}
   - component: {fileID: 1006913663}
-  - component: {fileID: 1006913665}
+  - component: {fileID: 1006913667}
   - component: {fileID: 1006913666}
   m_Layer: 0
   m_Name: Starter
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbaa6da1eec8da0429342bdd849761af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textureDisplayerEmitter: {fileID: 1006913665}
+  _textureDisplayerEmitter: {fileID: 1006913667}
   _texturesSubloaderEmitter: {fileID: 1006913666}
 --- !u!4 &1006913664
 Transform:
@@ -617,20 +617,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1006913665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006913662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd0a998d20c0cf44f917539e7d36a55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextureItemPrefab: {fileID: 8174130828443310713, guid: 7dcfa75e77712f74596beb66baa09417, type: 3}
-  TextureItemsContainer: {fileID: 1658160093}
 --- !u!114 &1006913666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +630,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScrollRect: {fileID: 1405509616}
+--- !u!114 &1006913667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006913662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfc2ba987f27ff46930553551c2a591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextureItemPrefab: {fileID: 8174130828443310713, guid: 7dcfa75e77712f74596beb66baa09417, type: 3}
+  TextureItemsContainer: {fileID: 1658160093}
 --- !u!1 &1405509614
 GameObject:
   m_ObjectHideFlags: 0

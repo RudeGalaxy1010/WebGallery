@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GalleryStarter : Starter, ISceneLoadHandler<GalleryData>
 {
-    [SerializeField] private TextureDisplayerEmitter _textureDisplayerEmitter;
+    [SerializeField] private TexturesDisplayerEmitter _textureDisplayerEmitter;
     [SerializeField] private TexturesSubloaderEmitter _texturesSubloaderEmitter;
 
     private GalleryData _galleryData;
@@ -20,5 +20,6 @@ public class GalleryStarter : Starter, ISceneLoadHandler<GalleryData>
             _textureDisplayerEmitter));
         TexturesSubloader texturesSubloader = Register(new TexturesSubloader(webTexturesProvider, texturesDisplayer, 
             _texturesSubloaderEmitter));
+        PreviewLoader previewLoader = Register(new PreviewLoader(texturesDisplayer));
     }
 }
