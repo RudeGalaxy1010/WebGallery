@@ -14,6 +14,7 @@ public abstract class Starter : MonoBehaviour
 
     private void Start()
     {
+        OrientationSetter orientationSetter = new OrientationSetter();
         OnStart();
         Init();
     }

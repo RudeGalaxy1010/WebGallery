@@ -14,11 +14,13 @@ public class BackGalleryLoader : IInitable, IDeinitable
     public void Init()
     {
         _emitter.BackButton.onClick.AddListener(OnBackButtonClicked);
+        _emitter.BackButtonReader.OnBackButtonClicked += OnBackButtonClicked;
     }
 
     public void Deinit()
     {
         _emitter.BackButton.onClick.RemoveListener(OnBackButtonClicked);
+        _emitter.BackButtonReader.OnBackButtonClicked -= OnBackButtonClicked;
     }
 
     private void OnBackButtonClicked()
